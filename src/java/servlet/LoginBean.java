@@ -32,9 +32,9 @@ public class LoginBean {
         Connection conn = null;
         PreparedStatement ps = null;
         Class.forName("com.mysql.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost/bd_sistema_ficha_saude", "root", "root");
+        conn = DriverManager.getConnection("jdbc:mysql://localhost/bd_sistema_ficha_saude", "root", "");
 
-        ps = conn.prepareStatement("select * from pessoa where email = " + "'" + nome + "'" + " and pwd = " + "'" + senha + "'");
+        ps = conn.prepareStatement("select * from pessoa where nome = " + "'" + nome + "'" + " and pwd = " + "'" + senha + "'");
         ResultSet rs = ps.executeQuery();
 
         Pessoa pessoa = new Pessoa();
@@ -44,10 +44,11 @@ public class LoginBean {
 //            System.out.println("verificando o select-------------->>>>>");
 //            System.out.println(rs);
             pessoa.setNome(name);
-            pessoa.setPwd(password);
+            pessoa.setPwd(password);        
         }
         conn.close();
-        if (pessoa.getNome().equals(nome) && pessoa.getPwd().equals(password)) {
+        if (pessoa.getNome().equals(name) && pessoa.getPwd().equals(password)) {
+             System.out.println("chegou --->>>"+name + password);
             return true;
         } else {
             return false;

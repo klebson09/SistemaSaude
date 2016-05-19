@@ -71,7 +71,7 @@
 
 
 
-                            <!--LOGIN BUTTON--><input type="submit"  value="Entrar" class="button" /><!--END LOGIN BUTTON-->
+                            <!--LOGIN BUTTON--><input type="submit"  value="Entrar" class="button" action="<%= request.getContextPath()%>/ControllerLogin"/><!--END LOGIN BUTTON-->
                             <!--    CADASTRAR BUTTON<input type="submit" name="submit" value="Cadastrar" class="register"  />END CADASTRAR BUTTON-->
                         </div>
                         <!--END FOOTER-->

@@ -32,7 +32,7 @@ public class ConexaoMySQL {
             String mydatabase = "bd_sistema_ficha_saude"; //nome do seu banco de dados 
             String url = "jdbc:mysql://" + serverName + "/" + mydatabase;
             String username = "root";//nome de um usuário de seu BD 
-            String password = "root";//sua senha de acesso 
+            String password = "";//sua senha de acesso 
             connection = DriverManager.getConnection(url, username, password);
 //Testa sua conexão//
             if (connection != null) {
