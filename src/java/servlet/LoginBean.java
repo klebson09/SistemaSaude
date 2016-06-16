@@ -9,14 +9,14 @@ import model.Pessoa;
 
 public class LoginBean {
 
-    private String name, password;
+    private String email, password;
 
-    public String getName() {
-        return name;
+    public String getEmail() {
+        return email;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -27,32 +27,17 @@ public class LoginBean {
         this.password = password;
     }
 
-    public boolean validate(String nome, String senha) throws SQLException, ClassNotFoundException {
-
+    public boolean validate(String email, String senha) throws SQLException, ClassNotFoundException {
+        boolean retorno = false;
         Connection conn = null;
-        PreparedStatement ps = null;
+        PreparedStatement ps;
         Class.forName("com.mysql.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost/bd_sistema_ficha_saude", "root", "root");
+        conn = DriverManager.getConnection("jdbc:mysql://localhost/bd_sistema_ficha_saude", "root", "");
 
-        ps = conn.prepareStatement("select * from pessoa where email = " + "'" + nome + "'" + " and pwd = " + "'" + senha + "'");
+        ps = conn.prepareStatement("select * from pessoa where email = " + "'" + email + "'" + " and pwd = " + "'" + senha + "'");
         ResultSet rs = ps.executeQuery();
+        retorno = rs.next();
 
-        Pessoa pessoa = new Pessoa();
-        while (rs.next()) {
-
-            
-//            System.out.println("verificando o select-------------->>>>>");
-//            System.out.println(rs);
-            pessoa.setNome(name);
-            pessoa.setPwd(password);
-        }
-        conn.close();
-        if (pessoa.getNome().equals(nome) && pessoa.getPwd().equals(password)) {
-            return true;
-        } else {
-            return false;
-
-        }
-
+        return retorno;
     }
 }

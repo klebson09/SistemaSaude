@@ -20,12 +20,12 @@ public class ControllerLogin extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        String name = request.getParameter("name");
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
         HttpSession session = request.getSession();
 
         LoginBean bean = new LoginBean();
-        bean.setName(name);
+        bean.setEmail(email);
         bean.setPassword(password);
         request.setAttribute("bean", bean);
 
@@ -34,7 +34,7 @@ public class ControllerLogin extends HttpServlet {
         boolean status = false;
 
         try {
-            status = bean.validate(name, password);
+            status = bean.validate(email, password);
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(ControllerLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -48,7 +48,7 @@ public class ControllerLogin extends HttpServlet {
 
             // Check if this is new comer on your web page.
             if (session.isNew()) {
-                session.setAttribute("name", name);
+                session.setAttribute("name", email);
 //                RequestDispatcher rd = request.getRequestDispatcher("jsps/login-success.jsp");
                 RequestDispatcher rd = request.getRequestDispatcher("jsps/indexLogado.jsp");
                 rd.forward(request, response);

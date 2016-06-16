@@ -42,7 +42,7 @@ public class ControladorDeRedirecionamento extends HttpServlet {
         
         System.out.println(values[0]);
 
-        if (values[0].equals("home")) {
+        if (values[0].equals("Home")) {
             RequestDispatcher rd = request.getRequestDispatcher("jsps/indexLogado.jsp");
             rd.forward(request, response);
         }else if(values[0].equals("CadastrarExame")){
