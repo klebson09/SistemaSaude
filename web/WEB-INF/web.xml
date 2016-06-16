@@ -4,7 +4,7 @@
         <erro-code>404</erro-code>
         <location>/erroGeral.jsp</location>
     </erro-page>-->
-<!--    <erro-page>
+    <!--    <erro-page>
         <error-code>404</error-code>
         <location>/erroGeral</location>
     </erro-page>
@@ -63,12 +63,13 @@
     </servlet-mapping>
     <session-config>
         <session-timeout>
-            30
+            15
         </session-timeout>
     </session-config>
     <welcome-file-list>
         <!--        <welcome-file>jsps/endereco.jsp</welcome-file>-->
-                <welcome-file>jsps/login2.jsp</welcome-file>
-<!--        <welcome-file>jsps/listarExame.jsp</welcome-file>-->
+        <welcome-file>jsps/login2.jsp</welcome-file>
+        <!--                <welcome-file>jsps/indexLogado.jsp</welcome-file>-->
+        <!--        <welcome-file>jsps/listarExame.jsp</welcome-file>-->
     </welcome-file-list>
 </web-app>

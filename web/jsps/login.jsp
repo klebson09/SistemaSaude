@@ -9,7 +9,7 @@
     </head>
     <body>
         <div id="divCenter">
-            <form style=""class="form-container" method="POST" action="<%= request.getContextPath()%>/ControllerLogin" >
+            <form style=""class="form-container" method="POST" action="<%=request.getContextPath()%>/ControllerLogin" >
                 <div class="form-title"><h2>Login</h2></div>
                 <div class="form-title">Nome</div>
                 <input class="form-field" type="text" name="name" /><br />
@@ -22,18 +22,6 @@
         </div>
 
 
-<!--        <form method="POST" action="<%= request.getContextPath()%>/ControllerLogin.do" >
-            
-            <label for="inputEmail">E-mail</label> <BR>
-            <input id="inputEmail" name="login" type="text" placeholder="Digite o seu e-mail..." /> <br>
-            
-            USERNAME<input  name="login" type="text" class="input username" value="E-mail" onfocus="this.value = ''" />END USERNAME
-            PASSWORD<input  name="senha" type="password" class="input password" value="Senha" onfocus="this.value = ''" />END PASSWORD
-            <br></br>
-            LOGIN BUTTON<input type="submit" name="submit" value="Entrar" class="button" />END LOGIN BUTTON
-            <a href="${pageContext.request.contextPath}/jsps/cadastrarPaciente.jsp" style="margin-left:30px;">Cadastrar Novo Usuário</a>
-                          CADASTRAR BUTTON<input type="submit" name="submit" value="Novo Usuario" class="register" />END CADASTRAR BUTTON
-        </form>
-        </div>-->
+
     </body>
 </html>

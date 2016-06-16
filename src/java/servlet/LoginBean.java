@@ -33,11 +33,9 @@ public class LoginBean {
         PreparedStatement ps;
         Class.forName("com.mysql.jdbc.Driver");
         conn = DriverManager.getConnection("jdbc:mysql://localhost/bd_sistema_ficha_saude", "root", "");
-
         ps = conn.prepareStatement("select * from pessoa where email = " + "'" + email + "'" + " and pwd = " + "'" + senha + "'");
         ResultSet rs = ps.executeQuery();
         retorno = rs.next();
-
         return retorno;
     }
 }
