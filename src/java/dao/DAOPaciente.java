@@ -24,7 +24,7 @@ public void adicionar(Paciente paciente) {
 
             Class.forName("com.mysql.jdbc.Driver"); //registrando o driver
 
-            con = DriverManager.getConnection(url, "root", "root");
+            con = DriverManager.getConnection(url, "root", "");
             // seta os valores
             PreparedStatement stmt = con.prepareStatement(sql);
 
@@ -53,7 +53,7 @@ public void adicionar(Paciente paciente) {
         String query = "SELECT Paciente_numSUS, idPaciente=";
         try {
             Class.forName("com.mysql.jdbc.Driver"); //registrando o driver
-            con = DriverManager.getConnection(url, "root", "root");
+            con = DriverManager.getConnection(url, "root", "");
             //conectando stmt = con.createStatement(); //criando um statement
             rs = stmt.executeQuery(query); //executando a query
 

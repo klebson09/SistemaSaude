@@ -28,7 +28,7 @@ public class DAOEndereco {
 
             Class.forName("com.mysql.jdbc.Driver"); //registrando o driver
 
-            con = DriverManager.getConnection(url, "root", "root");
+            con = DriverManager.getConnection(url, "root", "");
             // seta os valores
             PreparedStatement stmt = con.prepareStatement(sql);
 

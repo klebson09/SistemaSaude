@@ -30,7 +30,7 @@ public class ControllerLogin extends HttpServlet {
         request.setAttribute("bean", bean);
 
         System.out.println("pegando o email e password ------->>>");
-        System.out.println(name + password);
+        System.out.println(name+ "/n"+ password);
         boolean status = true;
 //                System.out.println("exibe o email e password ------->>>");
 
@@ -64,11 +64,11 @@ Utilizando-se dos métodos
             if (session.isNew()) {
                 session.setAttribute("name", name);
 //                RequestDispatcher rd = request.getRequestDispatcher("jsps/login-success.jsp");
-                RequestDispatcher rd = request.getRequestDispatcher("jsps/cadastrarPaciente.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("jsps/indexLogado.jsp");
                 rd.forward(request, response);
                 System.out.println("OK ----> nova session");
             } else {System.out.println("---->>session failed");
-                RequestDispatcher rd = request.getRequestDispatcher("jsps/cadastrarPaciente.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("jsps/login-error.jsp");
                 
                 rd.forward(request, response);
                 

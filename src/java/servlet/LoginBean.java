@@ -43,16 +43,17 @@ public class LoginBean {
             
 //            System.out.println("verificando o select-------------->>>>>");
 //            System.out.println(rs);
-            pessoa.setNome(name);
-            pessoa.setPwd(password);        
+            pessoa.setNome(nome);
+            pessoa.setPwd(senha);        
         }
         conn.close();
-        if (pessoa.getNome().equals(name) && pessoa.getPwd().equals(password)) {
-             System.out.println("chegou --->>>"+name + password);
+        if (pessoa.getNome().equals(nome) && pessoa.getPwd().equals(senha)) {
+             System.out.println("chegou em loginBean.java  --->>>"+nome + senha);
             return true;
         } else {
-            return false;
-
+            
+            //System.out.println("Login e/ou senha incorreta");
+            return false;   
         }
 
     }

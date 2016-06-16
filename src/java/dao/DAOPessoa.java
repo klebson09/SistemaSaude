@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.Endereco;
 
 public class DAOPessoa {
 
@@ -23,7 +24,7 @@ public class DAOPessoa {
 
             Class.forName("com.mysql.jdbc.Driver"); //registrando o driver
 
-            con = DriverManager.getConnection(url, "root", "root");
+            con = DriverManager.getConnection(url, "root", "");
             try ( // seta os valores
                     PreparedStatement stmt = con.prepareStatement(sql)) {
                 stmt.setString(1, pessoa.getNome());
@@ -55,7 +56,7 @@ public class DAOPessoa {
     public void delete() {
     }
 
-    public void list() throws SQLException {
+    public void list(Endereco endereco) throws SQLException {
         Connection con = null;
         Statement stmt = null;
         ResultSet rs = null;
@@ -64,7 +65,7 @@ public class DAOPessoa {
         String query = "SELECT nome, data_nasc, CPF, RG, email, pwd FROM 'pessoa' WHERE idPessoa=";
         try {
             Class.forName("com.mysql.jdbc.Driver"); //registrando o driver
-            con = DriverManager.getConnection(url, "root", "root");
+            con = DriverManager.getConnection(url, "root", "");
             //conectando stmt = con.createStatement(); //criando um statement
             rs = stmt.executeQuery(query); //executando a query
 
@@ -82,6 +83,9 @@ public class DAOPessoa {
                 pessoa.setEmail(rs.getString("email"));
                 pessoa.setPwd(rs.getString("pwd"));
                 System.out.println(pessoa);
+                
+                DAOEndereco daoEndereco = new DAOEndereco();
+                daoEndereco.adicionar(endereco);
             }
         } catch (ClassNotFoundException ex) {
             //Problemas no carregamento do driver

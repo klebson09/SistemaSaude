@@ -10,7 +10,7 @@ public class Consulta {
 
     private static final long serialVersionUID = 1L;
     private String tipoConsulta;
-    private String observacao;
+    private String observacao;  
     private byte[] arquivoConsulta;
 
     public int getIdConsulta() {
