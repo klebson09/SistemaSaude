@@ -9,11 +9,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.Endereco;
+import model.Pessoa;
 
 public class DAOPaciente {
     
+    DAOPessoa daoPessoa = new DAOPessoa();
+    DAOEndereco daoEndereco = new DAOEndereco();
+           
+public void adicionar(Paciente paciente, Pessoa pessoa, Endereco endereco) {
     
-public void adicionar(Paciente paciente) {
+        daoPessoa.adicionar(pessoa);
+    
         Connection con = null;
         String url = "jdbc:mysql://localhost:3306/bd_sistema_ficha_saude";
         String sql = "insert into paciente "
@@ -38,6 +45,8 @@ public void adicionar(Paciente paciente) {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(DAOPaciente.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        daoEndereco.adicionar(endereco);
 
     }
 

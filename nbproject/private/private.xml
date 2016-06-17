@@ -3,28 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/dao/DAOConsulta.java</file>
-            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/com/model/ejb/PessoaDAO.java</file>
             <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/dao/DAOPessoa.java</file>
-            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/dao/DAOConsultaPK.java</file>
-            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/dao/ConexaoMySQL.java</file>
-            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/model/Pessoa.java</file>
-            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/dao/DAOEndereco.java</file>
-            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/dao/DAOPaciente.java</file>
-            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/web/jsps/indexLogado.jsp</file>
-            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/model/Consulta.java</file>
-            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/web/jsps/indexInicial.html</file>
             <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/servlet/ControladorDeRedirecionamento.java</file>
-            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/servlet/ControllerLogin.java</file>
-            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/model/PacientePK.java</file>
-            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/web/jsps/login.jsp</file>
             <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/web/jsps/cadastrarPaciente.jsp</file>
-            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/web/jsps/login2.jsp</file>
-            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/web/jsps/indexInicial.jsp</file>
-            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/servlet/LoginBean.java</file>
+            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/servlet/ControladorDAO.java</file>
+            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/model/Pessoa.java</file>
             <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/servlet/ControllerPessoa.java</file>
-            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/web/jsps/indexLogado.html</file>
+            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/dao/DAOPaciente.java</file>
+            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/model/Paciente.java</file>
+            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/servlet/ControllerCadastroPaciente.java</file>
         </group>
     </open-files>
 </project-private>

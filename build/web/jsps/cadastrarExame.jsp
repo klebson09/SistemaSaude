@@ -63,16 +63,6 @@
 						<input id="inputTipoExame" type="text" name="tipoExame"  class="input username" /> <br>
 						<label for="inputEspecialidade">Especialidade</label> <br>
 						<input id="inputEspecialidade" type="data" name="especialidade" class="input username" /><br>
-<!--						Sexo
-						<select name=Sexo>
-							<option>Masculino</option>
-							<option>Feminino</option>
-						</select><br> <br>
-						Estado Civil
-						<select name=Sexo>
-							<option>Solteiro</option>
-							<option>Casado</option>
-						</select><br><br>-->
 						<label for="inputObservacao" >Observação</label> <br>
 						<input id="inputObservacao" type="text" maxlength="55" name="observacao"  class="input username" /> <br>
 						<label for="inputDataDoExame">Data do Exame</label> <br>
@@ -80,39 +70,12 @@
 						
 					</fieldset>
 					</div>
-					<!--OBS. FALTA INSERIR NA TABELA DO BANCO DE DADOS TELEFONE, Celular E Sexo Naturalidade-->
-<!--					<div class="endereco">
-					<fieldset>
-					  <legend>Endereço</legend>
-						<label for="inputRua">Rua</label> <BR>
-						<input id="inputRua" type="text" name="rua"  class="input username" /> <br>
-						<label for="inputRua">Complemento</label> <BR>
-						<input id="inputRua" type="text" name="rua"  class="input username" /> <br>
-						<label for="inputNumero">Número</label> <br>
-						<input id="inputNumero" type="text" name="numero" class="input username" /><br>
-						<label for="inputBairro">Bairro</label> <BR>
-						<input id="inputBairro" type="text" name="bairro"  class="input username" /> <br>
-						<label for="inputCidade">Cidade</label> <br>
-						<input id="inputCidade" type="text" name="cidade" class="input username" /><br>
-						<label for="inputEstado">Estado</label> <BR>
-						<input id="inputEstado" type="text" name="estado"  class="input username" /> <br>
-						<label for="inputCep">CEP</label> <br>
-						<input id="inputCep" type="text" name="cep" class="input username" /><br>
-                    </fieldset> 
-					</div>-->
-<!--					<fieldset>
-					  <legend>Acesso</legend>
-					<div class="acesso">
 					
-						<label for="inputEmail">Senha</label> 
-						<input id="inputEmail" type="text" name="email"  class="input username" /> 
-						<label for="inputSenha">Repetir Senha</label> 
-						<input id="inputSenha" type="text" name="senha" class="input username" /><br>
-					</fieldset>-->
+
 					</div>
 					
 					
-				</div>
+				
 
 				<div class="footer">
 					<!--<input type="hidden" name="tarefa" value="cadastrar"/>

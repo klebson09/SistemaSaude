@@ -83,11 +83,13 @@
                                                         <input id="inputRG" type="text" name="celular" class="input username" /><br>-->
                             <label for="inputCPF">E-mail</label> <br>
                             <input id="inputCPF" type="text" name="email"  class="input username" /> <br>
+                            <label for="inputSUS">Número do SUS</label> <br>
+                            <input id="inputSUS" type="text" name="inputSUS"  class="input username" /> <br>
                         </fieldset>
                     </div>
                     <!--OBS. FALTA INSERIR NA TABELA DO BANCO DE DADOS TELEFONE, Celular E Genero
                     -->
-                                        <div class="endereco">
+<!--                                        <div class="endereco">
                                             <fieldset>
                                                 <legend>Endereço</legend>
                                                 <label for="inputRua">Rua</label> <BR>
@@ -105,7 +107,7 @@
                                                 <label for="inputCep">CEP</label> <br>
                                                 <input id="inputCep" type="text" name="cep" class="input username" /><br>
                                             </fieldset> 
-                                        </div>
+                                        </div>-->
                     <fieldset>
                         <legend>Acesso</legend>
                         <div class="acesso">

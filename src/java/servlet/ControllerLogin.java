@@ -20,22 +20,23 @@ public class ControllerLogin extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        String name = request.getParameter("name");
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
         HttpSession session = request.getSession();
 
         LoginBean bean = new LoginBean();
-        bean.setName(name);
+        bean.setEmail(email);
         bean.setPassword(password);
         request.setAttribute("bean", bean);
 
         System.out.println("pegando o email e password ------->>>");
-        System.out.println(name+ "/n"+ password);
+
+        System.out.println(email + password);
         boolean status = true;
 //                System.out.println("exibe o email e password ------->>>");
 
         try {
-            status = bean.validate(name, password);
+            status = bean.validate(email, password);
             System.out.println("passou login");
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(ControllerLogin.class.getName()).log(Level.SEVERE, null, ex);
@@ -52,29 +53,29 @@ public class ControllerLogin extends HttpServlet {
 
             //Para invalidar uma sessão pode usar      
             // session.invalidate();  
-           
-            
-/*
+            /*
 Utilizando-se dos métodos
     session.setAttribute(String nome,Object valor);   
     session.getAttribute(String nome);              
-*/            
-            
+             */
             // Check if this is new comer on your web page.
             if (session.isNew()) {
-                session.setAttribute("name", name);
+                session.setAttribute("name", email);
 //                RequestDispatcher rd = request.getRequestDispatcher("jsps/login-success.jsp");
                 RequestDispatcher rd = request.getRequestDispatcher("jsps/indexLogado.jsp");
                 rd.forward(request, response);
                 System.out.println("OK ----> nova session");
-            } else {System.out.println("---->>session failed");
-                RequestDispatcher rd = request.getRequestDispatcher("jsps/login-error.jsp");
-                
+            } else {
+                System.out.println("---->>session failed");
+                RequestDispatcher rd = request.getRequestDispatcher("jsps/indexLogado.jsp");
+
                 rd.forward(request, response);
-                
+
             }
-           
+
         } else {
+            RequestDispatcher rd = request.getRequestDispatcher("jsps/login-error.jsp");
+
             throw new ServletException("Campos vazios");
 //            RequestDispatcher rd = request.getRequestDispatcher("jsps/login-error.jsp");
 //            rd.forward(request, response);

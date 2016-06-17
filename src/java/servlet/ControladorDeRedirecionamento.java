@@ -45,8 +45,11 @@ public class ControladorDeRedirecionamento extends HttpServlet {
         if (values[0].equals("Home")) {
             RequestDispatcher rd = request.getRequestDispatcher("jsps/indexLogado.jsp");
             rd.forward(request, response);
-        }else if(values[0].equals("CadastrarExame")){
+        }else if(values[0].equals("CadastrarConsulta")){
         RequestDispatcher rd = request.getRequestDispatcher("jsps/cadastrarConsulta.jsp");
+            rd.forward(request, response);
+        }else if(values[0].equals("CadastrarExame")){
+        RequestDispatcher rd = request.getRequestDispatcher("jsps/cadastrarExame.jsp");
             rd.forward(request, response);
         }else if(values[0].equals("ListarConsulta")){
         RequestDispatcher rd = request.getRequestDispatcher("jsps/listarConsulta.jsp");

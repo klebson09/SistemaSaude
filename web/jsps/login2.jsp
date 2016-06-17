@@ -63,7 +63,7 @@
                         <label for="inputEmail">E-mail</label> <BR>
                     <input id="inputEmail" name="login" type="text" placeholder="Digite o seu e-mail..." /> <br>
                         -->
-                        <!--USERNAME--><input id="inputEmail" name="name" type="text" class="input username" value="E-mail" onfocus="this.value = ''" /><!--END USERNAME-->
+                        <!--USERNAME--><input id="inputEmail" name="email" type="text" class="input username" value="E-mail" onfocus="this.value = ''" /><!--END USERNAME-->
                         <!--PASSWORD--><input id="inputPassword" name="password" type="password" class="input password" value="Senha" onfocus="this.value = ''" /><!--END PASSWORD-->
 
                         <!--FOOTER-->

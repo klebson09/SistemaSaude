@@ -41,7 +41,7 @@
                 <h1>Você está logado!</h1>  
                 <%
                     LoginBean bean = (LoginBean) request.getAttribute("bean");
-                    out.print("Bem vindo, " + bean.getName());
+                    out.print("Bem vindo, " + bean.getEmail());
                     out.print("</br>");
                     out.print("Sua sessão está definida pela seguinte ID:" + session.getId());
                 %> 
@@ -63,7 +63,7 @@
             <!--            <button class="button">Button</button>-->
             <form name="formButton" action="<%= request.getContextPath()%>/ControladorDeRedirecionamento" method="POST">
                 <input type="submit" name="opcao" class="button" value="Home">
-                <input type="submit" name="opcao" class="button" value="CadastrarExame">
+                <input type="submit" name="opcao" class="button" value="CadastrarConsulta">
                 <input type="submit" name="opcao" class="button" value="CadastrarExame">
                 <input type="submit" name="opcao" class="button" value="ListarConsulta">
                 <input type="submit" name="opcao" class="button" value="ListarExame">

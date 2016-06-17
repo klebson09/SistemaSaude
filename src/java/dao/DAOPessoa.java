@@ -17,8 +17,8 @@ public class DAOPessoa {
         Connection con = null;
         String url = "jdbc:mysql://localhost:3306/bd_sistema_ficha_saude";
         String sql = "insert into pessoa "
-                + "(nome, data_nasc, CPF, RG, email, pwd, logradouro, numero, complemento, cidade, estado, cep)"
-                + " values (?,?,?,?,?,?,?,?,?,?,?,?)";
+                + "(nome, data_nasc, CPF, RG, email, pwd)"
+                + " values (?,?,?,?,?,?)";
 
         try {
 
@@ -33,12 +33,12 @@ public class DAOPessoa {
                 stmt.setString(4, pessoa.getRg());
                 stmt.setString(5, pessoa.getEmail());
                 stmt.setString(6, pessoa.getPwd());
-                stmt.setString(7, pessoa.getLogradouro());
-                stmt.setInt(8, pessoa.getNumero());
-                stmt.setString(9, pessoa.getComplemento());
-                stmt.setString(10, pessoa.getCidade());
-                stmt.setString(11, pessoa.getEstado());
-                stmt.setString(12, pessoa.getCep());
+//                stmt.setString(7, pessoa.getLogradouro());
+//                stmt.setInt(8, pessoa.getNumero());
+//                stmt.setString(9, pessoa.getComplemento());
+//                stmt.setString(10, pessoa.getCidade());
+//                stmt.setString(11, pessoa.getEstado());
+//                stmt.setString(12, pessoa.getCep());
 
 // executa
                 stmt.execute();
@@ -62,7 +62,7 @@ public class DAOPessoa {
         ResultSet rs = null;
         Pessoa pessoa = null;
         String url = "jdbc:mysql://localhost:3306/bd_sistema_ficha_saude";
-        String query = "SELECT nome, data_nasc, CPF, RG, email, pwd FROM 'pessoa' WHERE idPessoa=";
+        String query = "SELECT idPessoa, nome, data_nasc, CPF, RG, email, pwd FROM 'pessoa' WHERE idPessoa=";
         try {
             Class.forName("com.mysql.jdbc.Driver"); //registrando o driver
             con = DriverManager.getConnection(url, "root", "");
@@ -76,13 +76,14 @@ public class DAOPessoa {
 
 //Recuperando os dados do result set.
                 pessoa.setIdPessoa(Integer.MIN_VALUE);
+                pessoa.setNome(rs.getString("idPessoa"));
                 pessoa.setNome(rs.getString("nome"));
                 pessoa.setDataNasc(rs.getString("dataNasc"));
                 pessoa.setCpf(rs.getString("cpf"));
                 pessoa.setRg(rs.getString("rg"));
                 pessoa.setEmail(rs.getString("email"));
                 pessoa.setPwd(rs.getString("pwd"));
-                System.out.println(pessoa);
+                System.out.println(""query);
                 
                 DAOEndereco daoEndereco = new DAOEndereco();
                 daoEndereco.adicionar(endereco);
@@ -112,8 +113,61 @@ public class DAOPessoa {
         }
     }
 
-    public Pessoa find() {
-        return null;
+    public Pessoa buscarPessoa(String cpfPessoa) {
+        Connection con = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        Pessoa pessoa = null;
+        String url = "jdbc:mysql://localhost:3306/bd_sistema_ficha_saude";
+        String query = "SELECT id_pessoa, nome, data_nasc, CPF, RG, email, pwd FROM 'pessoa' WHERE CPF=" + cpfPessoa;
+        try {
+            Class.forName("com.mysql.jdbc.Driver"); //registrando o driver
+            con = DriverManager.getConnection(url, "root", "");
+            //conectando stmt = con.createStatement(); //criando um statement
+            rs = stmt.executeQuery(query); //executando a query
+
+            // o result set contém os resultados da operação
+            if (rs.next()) {
+
+                pessoa = new Pessoa();
+
+//Recuperando os dados do result set.
+                pessoa.setIdPessoa(Integer.MIN_VALUE);
+                pessoa.setNome(rs.getString("id_pessoa"));
+                pessoa.setNome(rs.getString("nome"));
+                pessoa.setDataNasc(rs.getString("dataNasc"));
+                pessoa.setCpf(rs.getString("cpf"));
+                pessoa.setRg(rs.getString("rg"));
+                pessoa.setEmail(rs.getString("email"));
+                pessoa.setPwd(rs.getString("pwd"));
+                System.out.println(pessoa);
+                
+            }
+        } catch (ClassNotFoundException ex) {
+            //Problemas no carregamento do driver
+            ex.printStackTrace();
+        } catch (SQLException ex) { //principal exceção JDBC
+            ex.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException ex) {
+
+                ex.printStackTrace();
+
+            }
+
+        }
+        
+        return pessoa;
     }
 
 }
