@@ -5,8 +5,10 @@
         <group>
             <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/dao/DAOPessoa.java</file>
             <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/servlet/ControladorDeRedirecionamento.java</file>
+            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/servlet/facade/FacadePaciente.java</file>
             <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/web/jsps/cadastrarPaciente.jsp</file>
-            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/servlet/ControladorDAO.java</file>
+            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/web/jsps/testeCadastrarPaciente.jsp</file>
+            <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/web/jsps/login2.jsp</file>
             <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/model/Pessoa.java</file>
             <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/servlet/ControllerPessoa.java</file>
             <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/dao/DAOPaciente.java</file>

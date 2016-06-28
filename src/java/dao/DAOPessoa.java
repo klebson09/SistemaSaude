@@ -83,7 +83,7 @@ public class DAOPessoa {
                 pessoa.setRg(rs.getString("rg"));
                 pessoa.setEmail(rs.getString("email"));
                 pessoa.setPwd(rs.getString("pwd"));
-                System.out.println(""query);
+               // System.out.println(query);
                 
                 DAOEndereco daoEndereco = new DAOEndereco();
                 daoEndereco.adicionar(endereco);

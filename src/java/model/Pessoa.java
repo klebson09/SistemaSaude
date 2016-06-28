@@ -141,10 +141,10 @@ public class Pessoa implements Serializable {
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "com.dao.PessoaDAO[ idPessoa=" + idPessoa + " ]";
-    }
+//    @Override
+//    public String toString() {
+//        return "com.dao.PessoaDAO[ idPessoa=" + idPessoa + " ]";
+//    }
 // retirar esse metodo usado apenas para teste
 //    public void setDataNasc(String dataNasc) {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

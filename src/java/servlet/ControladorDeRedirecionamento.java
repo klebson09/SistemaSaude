@@ -60,8 +60,9 @@ public class ControladorDeRedirecionamento extends HttpServlet {
         }else if(values[0].equals("CadastrarPaciente")){
         RequestDispatcher rd = request.getRequestDispatcher("jsps/cadastrarPaciente.jsp");
             rd.forward(request, response);
+       // }else if(values[0].equals("NovoUsuario")){
         }else if(values[0].equals("NovoUsuario")){
-        RequestDispatcher rd = request.getRequestDispatcher("jsps/cadastrarPaciente.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("jsps/testeCadastrarPaciente.jsp");
             rd.forward(request, response);
         }else if(values[0].equals("TelaLogin")){
         RequestDispatcher rd = request.getRequestDispatcher("jsps/login2.jsp");

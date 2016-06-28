@@ -21,9 +21,10 @@ public class FacadePaciente {
     private DAOEndereco daoendereco;
     int idPessoa;
     
-    public FacadePaciente(DAOPessoa daopessoa, DAOPaciente daopaciente, DAOEndereco daoendereco) {
+    public FacadePaciente(DAOPessoa daopessoa, DAOPaciente daopaciente) {
         daopessoa =  new DAOPessoa();
-        this.daopaciente = daopaciente;
+        daopaciente =  new DAOPaciente();
+        //this.daopaciente = daopaciente;
         this.daoendereco = daoendereco;
     }
 
@@ -33,6 +34,7 @@ public class FacadePaciente {
     public void AdicionarFacadePaciente(Pessoa pessoa, Paciente paciente){
         daopessoa.adicionar(pessoa);
         idPessoa = daopessoa.buscarPessoa(pessoa.getCpf()).getIdPessoa();
-        daopessoa.adicionar(paciente);
+       // daopaciente.adicionar(paciente, pessoa);
+        daopaciente.adicionar(paciente);
     }
 }
