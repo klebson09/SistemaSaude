@@ -27,12 +27,12 @@ public class DAOPessoa {
             con = DriverManager.getConnection(url, "root", "");
             try ( // seta os valores
                     PreparedStatement stmt = con.prepareStatement(sql)) {
-                stmt.setString(1, pessoa.getNome());
-                stmt.setString(2, pessoa.getDataNasc());
-                stmt.setString(3, pessoa.getCpf());
-                stmt.setString(4, pessoa.getRg());
-                stmt.setString(5, pessoa.getEmail());
-                stmt.setString(6, pessoa.getPwd());
+                        stmt.setString(1, pessoa.getNome());
+                        stmt.setString(2, pessoa.getDataNasc());
+                        stmt.setString(3, pessoa.getCpf());
+                        stmt.setString(4, pessoa.getRg());
+                        stmt.setString(5, pessoa.getEmail());
+                        stmt.setString(6, pessoa.getPwd());
 //                stmt.setString(7, pessoa.getLogradouro());
 //                stmt.setInt(8, pessoa.getNumero());
 //                stmt.setString(9, pessoa.getComplemento());
@@ -133,7 +133,6 @@ public class DAOPessoa {
 
 //Recuperando os dados do result set.
                 pessoa.setIdPessoa(Integer.MIN_VALUE);
-                pessoa.setNome(rs.getString("id_pessoa"));
                 pessoa.setNome(rs.getString("nome"));
                 pessoa.setDataNasc(rs.getString("dataNasc"));
                 pessoa.setCpf(rs.getString("cpf"));

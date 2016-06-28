@@ -51,46 +51,31 @@ public class DAOPaciente {
         //daoEndereco.adicionar(endereco);
     }
 
-    public void pegaIdPessoa(int idPessoa) throws SQLException, IOException {
-        int idresult = 0;
+    public Integer pegaIdPessoa(String cpf) throws SQLException, IOException {
+        Integer idPessoa = null;
         Connection con = null;
         PreparedStatement SQL;
-        
-        
+        Paciente paciente = null;
 
-           
         try {
-            
             String url = "jdbc:mysql://localhost:3306/bd_sistema_ficha_saude";
-            SQL = con.PreparedStatement("Select * from pessoa where idPessoa = ?");
-            SQL.setInt(1, idPessoa);
-			ResultSet rs = SQL.executeQuery();
+            con = DriverManager.getConnection(url, "root", "");
+            SQL = con.prepareStatement("Select idPessoa from pessoa where CPF = ?");
+            SQL.setString(1, cpf);
+            ResultSet rs = SQL.executeQuery();
             if (rs.next()) {
-				int lastIsertedId = rs.getInt("idcliente");
-				bean.setIdcliente(lastIsertedId);
-				idresult = bean.getIdcliente();
-			} else {
-				System.out.println("Cliente não encontrado");
-			}
-			rs.close();
-			SQL.close();
-			con.close();
-		} catch (SQLException e) {
-			System.out.println("Erro de SQL" + e);
-		}
-		try {
-			con = ConexaoEstoque.getConexao();  
-			PreparedStatement ps2 = con.prepareStatement("insert into compra(idcliente, produto) values (?, ?)");
-			ps2.setInt(1, idresult);
-			ps2.setString(2, bean.getProduto());
-			ps2.execute();
-			ps2.close();
-			con.close();
-		} catch (SQLException e) {
-			System.out.println("Erro no SQL2" + e);
-		}
-	}
-    
+                idPessoa = Integer.MIN_VALUE;
+            } else {
+                System.out.println("Cliente não encontrado");
+            }
+            rs.close();
+            SQL.close();
+            con.close();
+        } catch (SQLException e) {
+            System.out.println("Erro de SQL" + e);
+        }
+        return idPessoa;
+    }
 
     public void delete() {
     }
@@ -115,7 +100,7 @@ public class DAOPaciente {
 
 //Recuperando os dados do result set.
                 //paciente.setIdPaciente(Integer.MIN_VALUE);
-                paciente.setNumSUS(rs.getInt("Paciente_numSUS"));
+                paciente.setNumSUS(rs.getNString("numSUS"));
                 System.out.println(paciente);
             }
         } catch (ClassNotFoundException | SQLException ex) {

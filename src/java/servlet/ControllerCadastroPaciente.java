@@ -5,12 +5,14 @@ import dao.DAOPessoa;
 import model.Pessoa;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Paciente;
+import servlet.facade.FacadePaciente;
 
 /**
  *OBS NÃO ESTÁ CADASTRANDO EM 2 TABELAS (ENDERECO E PESSOA)
@@ -24,42 +26,32 @@ public class ControllerCadastroPaciente extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
 
-        String NumSUS = request.getParameter("NumSUS");
-        String PessoaIdPessoa = request.getParameter("Pessoa_idPessoa");//pegando dados de um formulário WEB 
-//        String cpf = request.getParameter("cpf");
-//        String rg = request.getParameter("rg");
-//        String email = request.getParameter("email");
-//        String pwd = request.getParameter("pwd");
+        String nome = request.getParameter("nome");
+        String dataNasc = request.getParameter("dataNasc");//pegando dados de um formulário WEB 
+        String rg = request.getParameter("rg");
+        String cpf = request.getParameter("cpf");
+        String email = request.getParameter("email");
+        String numSUS = request.getParameter("numSUS");
+        String pwd = request.getParameter("pwd");
         
-//        String logradouro = request.getParameter("logradouro");
-//        int numero = Integer.parseInt(request.getParameter("numero"));
-//        String complemento = request.getParameter("complemento");
-//        String cidade = request.getParameter("cidade");
-//        String estado = request.getParameter("estado");
-//        String cep = request.getParameter("cep");
-//        
-//        System.out.println("mostra nome: " + nome + "  dat nascimento: :" + dataNasc + "  CPF: " + cpf + "  Rg: " + rg + "  EMAIL: " + email + "  SENHA: " + pwd + "  ");
-//        System.out.println("mostra logradouro: " + logradouro + "  numero :" + numero + "  complemento: " + complemento + "  cidade: " + cidade + "  estado: " + estado + "  cep: " + cep + "  ");
         Paciente paciente = new Paciente();
-        paciente.setNumSUS(NumSUS);
-        paciente.setPessoaIdPessoa(Integer.SIZE);
-//        pessoa.setDataNasc(dataNasc);
-//        pessoa.setCpf(cpf);
-//        pessoa.setRg(rg);
-//        pessoa.setEmail(email);
-//        pessoa.setPwd(pwd);
+        paciente.setNumSUS(numSUS);
         
-//        pessoa.setLogradouro(logradouro);
-//        pessoa.setNumero(numero);
-//        pessoa.setComplemento(complemento);
-//        pessoa.setCidade(cidade);
-//        pessoa.setEstado(estado);
-//        pessoa.setCep(cep);
+        Pessoa pessoa = new Pessoa();
+        pessoa.setNome(nome);
+        pessoa.setDataNasc(dataNasc);
+        pessoa.setCpf(cpf);
+        pessoa.setRg(rg);
+        pessoa.setEmail(email);
+        pessoa.setPwd(pwd);
 
-        DAOPaciente daopaciente = new DAOPaciente();
-        daopaciente.adicionar(paciente);
-
-         
+        ArrayList<Object> listaObjetos = new ArrayList<>();
+        listaObjetos.add(pessoa);
+        listaObjetos.add(paciente);        
+        
+        ControladorDAO controladorDao = new ControladorDAO();
+        
+        controladorDao.construtorDeObjetos(pessoa,paciente, "Paciente");
         RequestDispatcher rd = request.getRequestDispatcher("jsps/cadastroSucesso.jsp");
         rd.forward(request, response);
     }

@@ -9,7 +9,6 @@ package model;
 import java.io.Serializable;
 
 public class Paciente extends Pessoa implements Serializable {
-    private static final long serialVersionUID = 1L;
 //    protected PacientePK pacienteDAOPK;
 //    private Pessoa pessoaidPessoa;
 //    

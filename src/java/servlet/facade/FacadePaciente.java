@@ -25,16 +25,15 @@ public class FacadePaciente {
         daopessoa =  new DAOPessoa();
         daopaciente =  new DAOPaciente();
         //this.daopaciente = daopaciente;
-        this.daoendereco = daoendereco;
     }
 
   
     
     
-    public void AdicionarFacadePaciente(Pessoa pessoa, Paciente paciente){
+    public void AdicionarPaciente(Pessoa pessoa, Paciente paciente){
         daopessoa.adicionar(pessoa);
         idPessoa = daopessoa.buscarPessoa(pessoa.getCpf()).getIdPessoa();
-       // daopaciente.adicionar(paciente, pessoa);
+        paciente.setPessoaIdPessoa(idPessoa);
         daopaciente.adicionar(paciente);
     }
 }

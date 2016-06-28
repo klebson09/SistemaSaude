@@ -43,7 +43,7 @@
             
             <h1>  <br/>  </h1>
             <form name="cadastro-form" class="cadastro-form" method="POST" action="<%= request.getContextPath() %>/ControllerCadastroPaciente">
-<!--            <form name="cadastro-form" class="cadastro-form" method="POST" action="<%= request.getContextPath() %>/ControllerCadastroPaciente">-->
+
                 <!--HEADER-->
                 <div class="header">
                     <!--TITLE--><h1>Cadastrar Paciente - SFS</h1><!--END TITLE-->
@@ -84,7 +84,7 @@
                             <label for="inputCPF">E-mail</label> <br>
                             <input id="inputCPF" type="text" name="email"  class="input username" /> <br>
                             <label for="inputSUS">Número do SUS</label> <br>
-                            <input id="inputSUS" type="text" name="inputSUS"  class="input username" /> <br>
+                            <input id="inputSUS" type="text" name="numSUS"  class="input username" /> <br>
                         </fieldset>
                     </div>
                     <!--OBS. FALTA INSERIR NA TABELA DO BANCO DE DADOS TELEFONE, Celular E Genero
