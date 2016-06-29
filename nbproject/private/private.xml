@@ -2,6 +2,7 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< c000a62a6f4d435943b19558165153247f6255ea
         <group>
             <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/dao/DAOPessoa.java</file>
             <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/servlet/ControladorDeRedirecionamento.java</file>
@@ -15,5 +16,8 @@
             <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/model/Paciente.java</file>
             <file>file:/C:/Users/klebson/Downloads/sfs_16.1/SFS_0912/src/java/servlet/ControllerCadastroPaciente.java</file>
         </group>
+=======
+        <group/>
+>>>>>>> mensagem
     </open-files>
 </project-private>
