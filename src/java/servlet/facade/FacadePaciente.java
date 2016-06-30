@@ -19,12 +19,12 @@ public class FacadePaciente {
     private DAOPessoa daopessoa;
     private DAOPaciente daopaciente;
     private DAOEndereco daoendereco;
-    int idPessoa;
+    Integer idPessoa = null;
     
-    public FacadePaciente(DAOPessoa daopessoa, DAOPaciente daopaciente) {
-        daopessoa =  new DAOPessoa();
-        daopaciente =  new DAOPaciente();
-        //this.daopaciente = daopaciente;
+    public FacadePaciente() {
+        this.daopessoa =  new DAOPessoa();
+        this.daopaciente =  new DAOPaciente();
+        this.daoendereco = new DAOEndereco();
     }
 
   

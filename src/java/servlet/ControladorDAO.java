@@ -42,9 +42,7 @@ public class ControladorDAO {
 //        }
         switch (classe) {
             case "Paciente":
-                DAOPessoa daoPessoa = new DAOPessoa();
-                DAOPaciente daoPaciente = new DAOPaciente();
-                FacadePaciente facadePaciente = new FacadePaciente(daoPessoa, daoPaciente);
+                FacadePaciente facadePaciente = new FacadePaciente();
                 facadePaciente.AdicionarPaciente(pessoa, paciente);
         }
 
