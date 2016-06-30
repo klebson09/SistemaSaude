@@ -15,26 +15,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ControllerPessoa extends HttpServlet {
-
+public class ControllerCadastroMedico extends HttpServlet {
    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        String nome = request.getParameter("nome");
         //todo valor que vem do formulario html ou jsp é string e precisa converter para int
         //obs. tipo data, tbm converter
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
         
-// FALTA VERIFICAR A CONVERSÃO DA VARIAVEL dataNasc para o tipo Date        
+        String nome = request.getParameter("nome");
         String dataNasc = request.getParameter("dataNasc");//pegando dados de um formulário WEB 
-        //SimpleDateFormat sdf1= new SimpleDateFormat("dd/MM/yyyy"); //você pode usar outras máscaras 
-        //Date dataNasc = sdf1.parse(dataNasc);
-
-        String cpf = request.getParameter("cpf");
         String rg = request.getParameter("rg");
+        String cpf = request.getParameter("cpf");
+        String crm = request.getParameter("crm");
+        String telefone = request.getParameter("telefone");
+        String celular = request.getParameter("celular");
         String email = request.getParameter("email");
         String pwd = request.getParameter("pwd");
         System .out.println("mostra nome: " +nome+ "  dat nascimento: :" + dataNasc + "  CPF: " + cpf + "  Rg: " + rg + "  EMAIL: " + email + "  SENHA: " + pwd + "  ");

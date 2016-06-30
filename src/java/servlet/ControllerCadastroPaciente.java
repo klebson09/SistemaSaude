@@ -15,7 +15,6 @@ import model.Paciente;
 import servlet.facade.FacadePaciente;
 
 /**
- *OBS NÃO ESTÁ CADASTRANDO EM 2 TABELAS (ENDERECO E PESSOA)
  * @author klebsonsantana
  */
 public class ControllerCadastroPaciente extends HttpServlet {
